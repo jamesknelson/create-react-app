@@ -1,6 +1,6 @@
 {
   "name": "react-scripts-mdx",
-  "version": "2.1.1-0",
+  "version": "2.1.1",
   "description": "Configuration and scripts for Create React App, with MDX support.",
   "repository": "jamesknelson/create-react-app-mdx",
   "license": "MIT",
