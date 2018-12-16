@@ -48,4 +48,5 @@ if [ -z $CI ]; then
 fi
 
 # Go!
-NPM_CONFIG_OTP="$otp" ./node_modules/.bin/lerna publish --independent --npm-client=npm "$@"
+cd packages/react-scripts
+npm publish

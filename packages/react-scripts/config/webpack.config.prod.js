@@ -380,6 +380,45 @@ module.exports = {
               sourceMaps: false,
             },
           },
+          // This loader creates JavaScript files out of Markdown files, where
+          // the JavaScript files export a single React component.
+          {
+            test: /\.mdx?$/,
+            include: paths.appSrc,
+            use: [
+              {
+                loader: require.resolve('babel-loader'),
+                options: {
+                  babelrc: false,
+                  configFile: false,
+                  compact: false,
+                  presets: [
+                    [
+                      require.resolve('babel-preset-react-app/dependencies'),
+                      { helpers: true },
+                    ],
+                  ],
+                  cacheDirectory: true,
+                  // Save disk space when time isn't as important
+                  cacheCompression: true,
+                  // @remove-on-eject-begin
+                  cacheIdentifier: getCacheIdentifier('production', [
+                    'babel-plugin-named-asset-import',
+                    'babel-preset-react-app',
+                    'react-dev-utils',
+                    'react-scripts',
+                  ]),
+                  // @remove-on-eject-end
+                  // If an error happens in a package, it's possible to be
+                  // because it was compiled. Thus, we don't want the browser
+                  // debugger to show the original code. Instead, the code
+                  // being evaluated would be much more helpful.
+                  sourceMaps: false,
+                },
+              },
+              require.resolve('mdx-loader'),
+            ],
+          },
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.
           // `MiniCSSExtractPlugin` extracts styles into CSS

@@ -24,7 +24,7 @@ try {
   fse.writeFileSync(path.join(temp, 'package.json'), '{}');
 
   // Extract the dependencies from react-scripts (which is a workspace)
-  const dependencies = require('react-scripts/package.json').dependencies;
+  const dependencies = require('react-scripts-mdx/package.json').dependencies;
   const descriptors = Object.keys(dependencies).map(
     dep => `${dep}@${dependencies[dep]}`
   );

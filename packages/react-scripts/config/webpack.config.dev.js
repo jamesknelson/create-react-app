@@ -306,6 +306,38 @@ module.exports = {
               sourceMaps: false,
             },
           },
+          // This loader creates JavaScript files out of Markdown files, where
+          // the JavaScript files export a single React component.
+          {
+            test: /\.mdx?$/,
+            include: paths.appSrc,
+            use: [
+              {
+                loader: require.resolve('babel-loader'),
+                options: {
+                  babelrc: false,
+                  configFile: false,
+                  compact: false,
+                  presets: [
+                    [
+                      require.resolve('babel-preset-react-app'),
+                      { helpers: true },
+                    ],
+                  ],
+                  cacheDirectory: true,
+                  // Don't waste time on Gzipping the cache
+                  cacheCompression: false,
+
+                  // If an error happens in a package, it's possible to be
+                  // because it was compiled. Thus, we don't want the browser
+                  // debugger to show the original code. Instead, the code
+                  // being evaluated would be much more helpful.
+                  sourceMaps: false,
+                },
+              },
+              require.resolve('mdx-loader'),
+            ],
+          },
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.
           // "style" loader turns CSS into JS modules that inject <style> tags.
