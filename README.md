@@ -10,7 +10,7 @@ A fork of the [create-react-app](https://github.com/facebook/create-react-app/) 
 
 To add support for MDX to a new create-react-app project, all you need to do is pass the `--react-scripts react-scripts-mdx` option to `create-react-app`:
 
-```js
+```bash
 npx create-react-app --scripts-version react-scripts-mdx
 ```
 
