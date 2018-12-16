@@ -11,7 +11,7 @@ A fork of the [create-react-app](https://github.com/facebook/create-react-app/) 
 To add support for MDX to a new create-react-app project, all you need to do is pass the `--react-scripts react-scripts-mdx` option to `create-react-app`:
 
 ```js
-npx create-react-app --react-scripts react-scripts-mdx
+npx create-react-app --scripts-version react-scripts-mdx
 ```
 
 With this, you'll be able to use Markdown and MDX files in your new project.
@@ -21,6 +21,39 @@ With this, you'll be able to use Markdown and MDX files in your new project.
 In your package.json, change all occurences of `react-scripts` to `react-scripts-mdx`, including occurences in `scripts` and `dependencies`.
 
 Then, re-run `yarn install` or `npm install` and you're good to go! You'll now be able to import and use Markdown and MDX files as React components.
+
+### Importing and using Markdown
+
+Once you've got your project set up, add a `test.mdx` file in your project's `src` directory:
+
+```markdown
+# Hello, world
+
+I'm an **MDX** file!
+```
+
+Then, import and use it in your `App.js` file as with any other component:
+
+```jsx
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import MDXDocument from './test.mdx';
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <MDXDocument />
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+
+For more details on MDX itself, see the [MDX documentation &raquo;](https://mdxjs.com)
 
 ## Why a fork?
 
