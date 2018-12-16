@@ -59,9 +59,9 @@ For more details on MDX itself, see the [MDX documentation &raquo;](https://mdxj
 
 While create-react-app 1 allowed for slight modifications to configuration through [react-app-rewired](https://github.com/timarney/react-app-rewired), this wasn't supported by the create-react-app team itself.
 
-With create-react-app 2, official support was added for some extensions through [babel-loader](https://github.com/babel/babel-loader). In fact, it's possible to get some form of MDX support with babel-loader, through the [mdx.macro](https://www.npmjs.com/package/mdx.macro) package (by yours truly). However, this package has a [major drawback](https://github.com/facebook/create-react-app/issues/5580): you'll need to manually restart the server each time you change an .mdx file.
+With create-react-app 2, official support was added for some extensions through [babel-plugin-macros](https://github.com/kentcdodds/babel-plugin-macros). In fact, it's possible to get some form of MDX support with babel-plugin-macros, through the [mdx.macro](https://www.npmjs.com/package/mdx.macro) package (by yours truly). However, this package has a [major drawback](https://github.com/facebook/create-react-app/issues/5580): you'll need to manually restart the server each time you change an .mdx file.
 
-In order to implement proper MDX support through babel-loader, babel itself will need a [new feature](https://github.com/babel/babel/issues/8497). And until this feature is added, the next best (and far easier) solution is this fork.
+In order to implement proper MDX support through babel-plugin-macros, babel itself will need a [new feature](https://github.com/babel/babel/issues/8497). And until this feature is added, the next best (and far easier) solution is this fork.
 
 ## What this fork changes
 
@@ -73,7 +73,7 @@ I've used the mdx-loader package instead of @mdx-js/loader, as mdx-loader takes 
 
 ## Future plans
 
-This fork is only meant as a stop-gap measure until babel-loader adds support live reloading of imported files, or until create-react-app adds direct support for MDX files.
+This fork is only meant as a stop-gap measure until babel-plugins-macros adds support live reloading of imported files, or until create-react-app adds direct support for MDX files.
 
 ## License
 
