@@ -1,18 +1,19 @@
 {
-  "name": "react-scripts",
-  "version": "3.0.1",
-  "description": "Configuration and scripts for Create React App.",
+  "name": "react-scripts-mdx",
+  "version": "3.0.3",
+  "description": "Configuration and scripts for Create React App, with MDX support.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/facebook/create-react-app.git",
-    "directory": "packages/react-scripts"
+    "url": "https://github.com/jamesknelson/create-react-app.git",
+    "directory": "packages/react-scripts",
+    "branch": "mdx"
   },
   "license": "MIT",
   "engines": {
     "node": ">=8.10"
   },
   "bugs": {
-    "url": "https://github.com/facebook/create-react-app/issues"
+    "url": "https://github.com/jamesknelson/create-react-app/issues"
   },
   "files": [
     "bin",
@@ -59,6 +60,7 @@
     "jest-environment-jsdom-fourteen": "0.1.0",
     "jest-resolve": "24.7.1",
     "jest-watch-typeahead": "0.3.0",
+    "mdx-loader": "3.0.2",
     "mini-css-extract-plugin": "0.5.0",
     "optimize-css-assets-webpack-plugin": "5.0.1",
     "pnp-webpack-plugin": "1.2.1",
