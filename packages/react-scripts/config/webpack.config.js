@@ -90,7 +90,7 @@ module.exports = function(webpackEnv, executionEnv) {
       isEnvDevelopment &&
         (isEnvWeb
           ? require.resolve('style-loader')
-          : require.resolve('null-loader')),
+          : require.resolve('isomorphic-style-loader')),
       isEnvProduction && {
         loader: MiniCssExtractPlugin.loader,
         options: shouldUseRelativeAssetPaths ? { publicPath: '../../' } : {},
